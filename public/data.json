@@ -1,0 +1,32 @@
+[
+    {
+        "id": "Potato",
+        "name": "Potato",
+        "price": 790,
+        "image": "https://www.openfotos.com/pictures/potato-3761.med.jpg"
+    },
+    {
+        "id": "Banana",
+        "name": "Banana",
+        "price": 1590,
+        "image": "https://www.openfotos.com/pictures/climacteric-banana-5837.med.jpg"
+    },
+    {
+        "id": "Apples",
+        "name": "Apples",
+        "price": 1250,
+        "image": "https://www.openfotos.com/pictures/bstumpf-6479.med.jpg"
+    },
+    {
+        "id": "Lettucce",
+        "name": "Lettucce",
+        "price": 700,
+        "image": "https://santaisabel.vtexassets.com/arquivos/ids/163080/Lechuga-escarola-un.jpg?v=637486512081300000"
+    },
+    {
+        "id": "Garlic",
+        "name": "Garlic",
+        "price": 850,
+        "image": "https://res.cloudinary.com/walmart-labs/image/upload/d_default.jpg/w_960,dpr_auto,f_auto,q_auto:best/gr/images/product-images/img_large/00000000004610L.jpg"
+    }
+    ]

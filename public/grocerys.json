@@ -1,0 +1,38 @@
+[
+    {
+        "id": "Pasta",
+        "name": "Pasta",
+        "price": 790,
+        "image": "https://eltitempresas.cl/wp-content/uploads/2019/03/pasta-espirales-carozzi-1.jpg"
+    },
+    {
+        "id": "Tomato sauce",
+        "name": "Tomato sauce",
+        "price": 1100,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkm6ef2nvH-y_T0ue7kAnbFKcp8o5oYBUU1nDlGwk024mhj8zYpdrmOrxSe1vTOGFpEl8&usqp=CAU"
+    },
+    {
+        "id": "Porotos granados",
+        "name": "Porotos Granados",
+        "price": 1250,
+        "image": "https://jumbo.vtexassets.com/arquivos/ids/485015/Porotos-Granados-Wasil-380-g.jpg?v=637891751456130000"
+    },
+    {
+        "id": "Rice",
+        "name": "Rice",
+        "price": 700,
+        "image": "https://i0.wp.com/www.distribuidorasantiago.cl/wp-content/uploads/2018/05/Tucapel-Arroz.jpg?fit=1200%2C1200&ssl=1"
+    },
+    {
+        "id": "Pure instantaneo",
+        "name": "Pure instantaneo",
+        "price": 1200,
+        "image": "https://bodegadispal.cl/wp-content/uploads/2021/01/pure-papas-250-gr.jpg"
+    },    
+    {
+        "id": "Salchichas",
+        "name": "Salchichas",
+        "price": 950,
+        "image": "https://cugat.cl/wp-content/uploads/2021/04/7801907010306-2.jpg"
+    }
+    ]

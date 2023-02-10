@@ -1,0 +1,38 @@
+[
+    {
+        "id": "Pisco Bauza",
+        "name": "Pisco Bauza",
+        "price": 5190,
+        "image": "https://jumbo.vtexassets.com/arquivos/ids/451923/Pisco-Bauza-750-ml-35%C2%B0.jpg?v=637656818719400000"
+    },
+    {
+        "id": "Pisco Mistral",
+        "name": "Pisco Mistral",
+        "price": 8990,
+        "image": "http://www.alambique22.cl/1328-home_default/pisco-mistral-anejando-en-roble-35-1000cc.jpg"
+    },
+    {
+        "id": "Bacardi Blanco",
+        "name": "Bacardi Blanco",
+        "price": 8990,
+        "image": "https://dondelanegra.cl/wp-content/uploads/2020/09/bacardi_coco.jpg"
+    },
+    {
+        "id": "Ron Bacardi Añejo",
+        "name": "Ron Bacardi Añejo",
+        "price": 7190,
+        "image": "https://www.elcielo.cl/tienda/748-large_default/ron-barcelo-anejo-1-litro-.jpg"
+    },
+    {
+        "id": "Soda",
+        "name": "Soda",
+        "price": 850,
+        "image": "https://tofuu.getjusto.com/orioneat-prod/G6hp5mfeYmkxCCXLx-cocacolanrm.jpg"
+    },
+    {
+        "id": "Cabo Viejo",
+        "name": "Cabo Viejo",
+        "price": 2990,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8eFg5-cCyTblxa4D1DYqQX_Cgm9sdFslH-x7o0DtjB7HVzjX2BKGUR3FGZzrpuh2F_hU&usqp=CAU"
+    }
+    ]

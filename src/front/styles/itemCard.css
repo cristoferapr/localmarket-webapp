@@ -1,0 +1,35 @@
+.item-container{
+    margin-left: 15%;
+    display: flex;
+    justify-content: space-around;
+    margin-right: 20vw;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+
+.item-card{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-style:double;
+    border-radius: 3%;
+    max-width: 370px;
+    min-height: 20%;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-color: aqua;
+}
+
+.item-img{
+    max-width: 10vw;
+    max-height: 20vh;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.item-info{
+    display: table-cell;
+    vertical-align: bottom;
+}

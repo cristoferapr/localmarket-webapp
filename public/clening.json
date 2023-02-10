@@ -1,0 +1,38 @@
+[
+    {
+        "id": "Omo",
+        "name": "Omo",
+        "price": 2400,
+        "image": "https://r.btcdn.co/r/eyJzaG9wX2lkIjo0MDY0LCJnIjoiMTAwMHgifQ/f94f9d776de57d4/667742-7805000313616.jpg"
+    },
+    {
+        "id": "Fuzol",
+        "name": "Fuzol",
+        "price": 1900,
+        "image": "https://dojiw2m9tvv09.cloudfront.net/12840/product/M_fuzol-hipo-1lt3636.jpg?51&time=1672709644"
+    },
+    {
+        "id": "Ariel",
+        "name": "Ariel",
+        "price": 3390,
+        "image": "https://7483c243aa9da28f329c-903e05bc00667eb97d832a11f670edad.ssl.cf1.rackcdn.com/20306888_5-axoIWDzT.jpg"
+    },
+    {
+        "id": "Raid",
+        "name": "Raid",
+        "price": 2290,
+        "image": "https://raidar-uc1.azureedge.net/-/media/Images/Project/RaidSite/Product-Page/large-product-image/7790520991836.jpg"
+    },
+    {
+        "id": "Lysoform",
+        "name": "Lysoform",
+        "price": 1790,
+        "image": "https://d1tjllbjmslitt.cloudfront.net/spree/products/57177/large_webp/574933.webp?1641329193"
+    },
+    {
+        "id": "Jabon Antibacterial",
+        "name": "Jabon Antibacterial",
+        "price": 3450,
+        "image": "https://dipromed.cl/d/enfermos-y-adulto-mayor/1793-large_default/jabon-liquido-dichlorexan-clorhexidina-2.jpg"
+    }
+    ]

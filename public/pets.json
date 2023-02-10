@@ -1,0 +1,32 @@
+[
+    {
+        "id": "Dog Show",
+        "name": "Dog Show",
+        "price": 20990,
+        "image": "https://sodimac.scene7.com/is/image/SodimacCL/6060943_01?wid=800&hei=800&qlt=70"
+    },
+    {
+        "id": "Royal Canin",
+        "name": "Royal Canin",
+        "price": 25490,
+        "image": "https://bestforpets.cl/tienda/12700-home_default/maxi-adult.jpg"
+    },
+    {
+        "id": "Dog Buffet",
+        "name": "Dog Buffet",
+        "price": 15990,
+        "image": "https://cugat.cl/wp-content/uploads/2021/04/7804419001152-2.jpg"
+    },
+    {
+        "id": "Cannes",
+        "name": "Cannes",
+        "price": 29990,
+        "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.sernac.cl%2Fportal%2F619%2Fw3-article-58617.html&psig=AOvVaw1CjFs71ZGactM-o5LcTBBZ&ust=1676121580103000&source=images&cd=vfe&ved=2ahUKEwjOi6rMhYv9AhXFBLkGHRLHC2kQjRx6BAgAEAo"
+    },
+    {
+        "id": "Purina One",
+        "name": "Purina One",
+        "price": 18990,
+        "image": "https://dojiw2m9tvv09.cloudfront.net/11787/product/alimentosecoparagatopurina-one-adultopolloysalmo-n9602.jpg"
+    }
+    ]

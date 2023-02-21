@@ -7,7 +7,8 @@ import * as AiIcons from "react-icons/ai";
 import { SidebarData } from "./sidebarData";
 import SubMenu from "./submenu";
 import { IconContext } from "react-icons/lib";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Dropdown } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const Nav = styled.div`
   background: #15171c;
@@ -43,10 +44,18 @@ const SidebarWrap = styled.div`
   width: 100%;
 `;
 
+
+
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	const [sidebar, setSidebar] = useState(false);
 	const showSidebar = () => setSidebar(!sidebar);
+  let navigate = useNavigate(); 
+	const routeChange = () =>{ 
+	  let path = '../controlPanel'; 
+	  navigate(path);
+  }
+
 	return (
 		<>
       <IconContext.Provider value={{ color: "#fff" }}>
@@ -59,26 +68,36 @@ export const Navbar = () => {
          				</NavIcon>
 		 		    </Col>
 					<Col xs={6}>
+            <Link to="/"> 
 					<h2
             			style={{ textAlign: "center",
 						paddingTop: "2vh",
                     	paddingLeft: "2%",
                     	color: "white" }}
           				>MinimarketWebApp</h2>
-              		
+              		</Link>
 					</Col>
 					<Col>
-					<Link className='seeCarrito' style={{fontSize: "40px"}} to={"/cart"}>
-                	🛒</Link>
+          <Dropdown alingRigth style={{paddingTop: "1vh",}}>
+      <Dropdown.Toggle variant="success" id="dropdown-basic">
+      🛒
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <span>Por implementar</span>
+      </Dropdown.Menu>
+    </Dropdown>
 					</Col>
 					<Col>
-					<div  className='nav-container' style={{paddingTop: "2vh"}}>
+					<div  className='nav-container' style={{paddingTop: "1vh", display: "flex", flex_direction: "row"}}>
 					{ !store.token ?
 						<Link to="/login">
 							<button className="btn btn-primary" >Log In</button>
 						</Link>
 						:
-						<button onClick={() => actions.logout()} className="btn btn-primary">Log Out</button>
+            <><button className="btn btn-primary" onClick={routeChange}>Control Panel</button>
+            <Link to="/">
+            <button onClick={() => actions.logout()} className="btn btn-primary">Log Out</button></Link></>
 }</div></Col>
 				</Row>
 

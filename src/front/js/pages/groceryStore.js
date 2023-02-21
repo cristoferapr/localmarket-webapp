@@ -4,11 +4,18 @@ import data from "../../../../public/grocerys.json";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import ItemCard from "../component/itemCard";
 
-const GroceryStore = () => {
+const GroceryStore = () =>  {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
+
+  const handleClick = (item) => {
+	  if (cart.indexOf(item) !== -1) return;
+	  setCart([...cart, item]);
+	  console.log(cart);
+	};
 
   useEffect(() => {
     fetch("data.json")
@@ -20,19 +27,15 @@ const GroceryStore = () => {
 
   return (
     <div className="item-container">
-      {data.map(product => (
+          <section>
+            {data.map(product => (
+          <ItemCard key={product.id} item={product} handleClick={handleClick} />
+                ))}
+          </section>
+      
         
-            <div className="item-card">
-                <img className="item-img" src={product.image} alt={product.name} />
-                <div className="item-info">
-                    <h2>{product.name}</h2>
-                    <h2>{product.price}</h2>
-                </div>
-            </div>
-          ))}
     </div>
 
   );
-};
-
+}
 export default GroceryStore;

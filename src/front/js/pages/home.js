@@ -1,26 +1,20 @@
-import React, { useContext } from "react";
-import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
+import React, { useState, useEffect, useContext } from "react";
+import ImageCarousel from "../component/ImageCarousel";
 
 export const Home = () => {
-	const { store, actions } = useContext(Context);
 
-	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!!</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
-			<div className="alert alert-info">
-				{store.message || "Loading message from the backend (make sure your python backend is running)..."}
-			</div>
-			<p>
-				This boilerplate comes with lots of documentation:{" "}
-				<a href="https://start.4geeksacademy.com/starters/react-flask">
-					Read documentation
-				</a>
-			</p>
-		</div>
-	);
-};
+	  return (
+		<><h1 class="inicio">
+        Welcome to your MiniMarket WebApp!
+      </h1><div>
+          <ImageCarousel
+            image1={'https://equipment21.com/wp-content/uploads/como-abrir-un-minimarket.jpg'}
+            captionTitle1={'You can customize this!'} captionText1={'With images of your minimarket, offers, or whatever you want!'}
+            image3={'https://kalsonjewellers.com/wp-content/uploads/2022/03/offers.jpg'}
+            captionTitle2={'You can customize this!'} captionText2={'With images of your minimarket, offers, or whatever you want!'}
+            image2={'https://www.salamancabusca.cl/wp-content/uploads/2016/12/2-1.jpg'}
+            captionTitle3={'You can customize this!'} captionText3={'With images of your minimarket, offers, or whatever you want!'} />
+        </div></>
+	  );
+	};

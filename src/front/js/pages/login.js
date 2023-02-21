@@ -3,6 +3,8 @@ import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "../../styles/login.css"
 
 export const Login = () => {
 	const { store, actions } = useContext(Context);
@@ -19,16 +21,19 @@ export const Login = () => {
     
 
 	return (
-		<div className="text-center mt-5">
-			<h1>Login</h1>
-                {store.token && store.token!="" && store.token!=undefined ? ("You are logged in with this token" + store.token 
-                ) : (
-                    <div>
-                        <input type="text" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                        <input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)}  />
-                        <button onClick={handleClick}>Login</button>
-                    </div>
-                )}
-		</div>
+		<><div className="text-center mt-5">
+            <h1>Login</h1>
+            {store.token && store.token != "" && store.token != undefined ? ("You are logged in with this token" + store.token
+            ) : (
+                <div>
+                    <input type="text" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <button onClick={handleClick}>Login</button>
+                </div>
+            )}
+        </div><div>
+            <p className="text-center mt-5">Doesn't have an account? <Link to="/signup">Sign Up!</Link></p>
+            <p className="text-center mt-5"><Link to="/signup">Forgot your Password?</Link></p>
+            </div></>
 	);
 };

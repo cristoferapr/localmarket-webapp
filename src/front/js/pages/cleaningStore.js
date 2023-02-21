@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/itemCard.css";
 import data from "../../../../public/clening.json";
-import Container from 'react-bootstrap/Container';
+import ItemCard from "../component/itemCard";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const CleaningStore = () => {
+const CleaningStore = () =>  {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
+
+  const handleClick = (item) => {
+	  if (cart.indexOf(item) !== -1) return;
+	  setCart([...cart, item]);
+	  console.log(cart);
+	};
 
   useEffect(() => {
     fetch("data.json")
@@ -20,19 +26,16 @@ const CleaningStore = () => {
 
   return (
     <div className="item-container">
-      {data.map(product => (
-        
-            <div className="item-card">
-                <img className="item-img" src={product.image} alt={product.name} />
-                <div className="item-info">
-                    <h2>{product.name}</h2>
-                    <h2>{product.price}</h2>
-                </div>
-            </div>
-          ))}
+          <section>
+            {data.map(product => (
+          <ItemCard key={product.id} item={product} handleClick={handleClick} />
+                ))}
+          </section>
+      
     </div>
 
   );
-};
+}
+
 
 export default CleaningStore;

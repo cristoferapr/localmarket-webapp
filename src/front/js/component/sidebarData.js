@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
@@ -8,9 +8,10 @@ import * as BiIcons from "react-icons/bi";
 import * as MdIcons from "react-icons/md";
  
 export const SidebarData = [
+
   {
     title: "Home",
-    path: "/home",
+    path: "/",
     icon: <BiIcons.BiHome />,
     iconClosed: <BiIcons.BiHome />,
     iconOpened: <BiIcons.BiHome />,
@@ -50,13 +51,8 @@ export const SidebarData = [
     ],
   },
   {
-    title: "Contact",
-    path: "/contact",
-    icon: <FaIcons.FaPhone />,
-  },
-  {
-    title: "Login",
-    path: "/login",
-    icon: <BiIcons.BiLogIn />,
+    title: "SignUp",
+    path: "/signup",
+    icon: <FaIcons.FaSign />,
   },
 ];

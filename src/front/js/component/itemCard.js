@@ -1,16 +1,20 @@
 import React from 'react';
 import "../../styles/itemCard.css";
 
-function ItemCard (props){
+const ItemCard = ({ item, handleClick }) => {
+    const { name , price, image } = item;
     return (
-        <div className="item-card">
-            <img className="item-img" src={props.image} alt={props.name} />
-            <div className="item-info">
-                <h2>{props.name}</h2>
-                <h2>{props.price}</h2>
-            </div>
+        <div className="cards">
+          <div className="image_box">
+            <img src={image} alt={name} />
+          </div>
+          <div className="details">
+            <p>{name}</p>
+            <p>Price - {price} CLP</p>
+            <button onClick={() => handleClick(item)}>Add to Cart</button>
+          </div>
         </div>
-    );
-}
+      );
+    };
 
 export default ItemCard

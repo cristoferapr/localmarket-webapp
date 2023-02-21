@@ -1,38 +1,41 @@
-import React, { useState, useEffect } from "react";
+import "../../styles/home.css";
+import React, { useState, useEffect, useContext } from "react";
 import "../../styles/itemCard.css";
-import data from "../../../../public/all.json";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Shopbar from "../component/shopbar";
+import Cart from "../component/cart";
+import Shop from "../component/shop";
 
-const Store = () => {
-  const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
-  const [total, setTotal] = useState(0);
-
-  useEffect(() => {
-    fetch("data.json")
-      .then(res => res.json())
-      .then(data => {
-        setProducts(data);
-      });
-  }, []);
-
-  return (
-    <div className="item-container">
-      {data.map(product => (
-        
-            <div className="item-card">
-                <img className="item-img" src={product.image} alt={product.name} />
-                <div className="item-info">
-                    <h2>{product.name}</h2>
-                    <h2>{product.price}</h2>
-                </div>
-            </div>
-          ))}
-    </div>
-
-  );
-};
-
-export default Store;
+export const Store = () => {
+	const [show, setShow] = useState(true);
+	const [cart, setCart] = useState([]);
+  
+	const handleClick = (item) => {
+	  if (cart.indexOf(item) !== -1) return;
+	  setCart([...cart, item]);
+	  console.log(cart);
+	};
+  
+	const handleChange = (item, d) => {
+	  const ind = cart.indexOf(item);
+	  const arr = cart;
+	  arr[ind].amount += d;
+  
+	  if (arr[ind].amount === 0) arr[ind].amount = 1;
+	  setCart([...arr]);
+	};
+  
+	// useEffect(() => {
+	//   console.log("cart change");
+	// }, [cart]);
+  
+	return (
+	  <React.Fragment>
+		<Shopbar setShow={setShow} size={cart.length} />
+		{show ? (
+		  <Shop handleClick={handleClick} />
+		) : (
+		  <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
+		)}
+	  </React.Fragment>
+	);
+  };

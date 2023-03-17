@@ -1,0 +1,59 @@
+#nn {
+    margin-top: 10vh;
+    margin-left: 15vw;
+    padding-right: 30px;
+    margin-bottom: 20px;
+}
+
+#name {
+    width: 350px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+#pp{
+    padding-right: 43px;
+    margin-left: 15vw;
+    margin-bottom: 20px;
+}
+#price {
+    width: 350px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+#ss {
+    padding-right: 55px;
+    margin-left: 15vw;
+    margin-bottom: 20px;
+}
+
+#stock {
+    width:350px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+#im {
+    padding-right: 75px;
+    margin-left: 15vw;
+    margin-bottom: 60px;
+}
+
+#image {
+    width: 350px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+#sbb {
+    border-radius: 5px;
+    margin-left:28vw;
+    width: 100px;
+    border-color: green;
+    background-color: greenyellow;
+}

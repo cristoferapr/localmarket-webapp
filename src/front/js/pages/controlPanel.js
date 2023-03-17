@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/itemCard.css";
+import "../../styles/controlPanel.css"
 import { useNavigate } from "react-router-dom";
 import data from "../../../../public/data.json";
 import Container from 'react-bootstrap/Container';
@@ -27,9 +28,8 @@ export const ControlPanel = () => {
 
     return (
         <div className="text-center mt-5">
-        <button class onClick={routeChangeAdd}>Agregar producto</button>
-        <button onClick={routeChangeEdit}>Editar producto</button>
-        <button onClick={routeChangeDelete}>Eliminar producto</button>
+        <button class="bnt" onClick={routeChangeAdd}>Agregar producto</button>
+        <button class="bnt" onClick={routeChangeEdit}>Editar producto</button>
         </div>
       );
 };

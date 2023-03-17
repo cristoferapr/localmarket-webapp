@@ -79,13 +79,6 @@ export const Navbar = () => {
 					</Col>
 					<Col>
           <Dropdown alingRigth style={{paddingTop: "1vh",}}>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-      🛒
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu>
-        <span>Por implementar</span>
-      </Dropdown.Menu>
     </Dropdown>
 					</Col>
 					<Col>

@@ -4,7 +4,8 @@
         "name": "Potato",
         "price": 790,
         "image": "https://www.openfotos.com/pictures/potato-3761.med.jpg",
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "kg"
     },
     {
         "id": "Banana",
@@ -12,7 +13,8 @@
         "price": 1590,
         "image": "https://www.openfotos.com/pictures/climacteric-banana-5837.med.jpg"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "kg"
     },
     {
         "id": "Apples",
@@ -20,7 +22,8 @@
         "price": 1250,
         "image": "https://www.openfotos.com/pictures/bstumpf-6479.med.jpg"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "kg"
     },
     {
         "id": "Lettucce",
@@ -28,15 +31,17 @@
         "price": 700,
         "image": "https://santaisabel.vtexassets.com/arquivos/ids/163080/Lechuga-escarola-un.jpg?v=637486512081300000"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Garlic",
         "name": "Garlic",
-        "price": 850,
+        "price": 300,
         "image": "https://res.cloudinary.com/walmart-labs/image/upload/d_default.jpg/w_960,dpr_auto,f_auto,q_auto:best/gr/images/product-images/img_large/00000000004610L.jpg"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Pisco Bauza",
@@ -44,7 +49,8 @@
         "price": 5190,
         "image": "https://jumbo.vtexassets.com/arquivos/ids/451923/Pisco-Bauza-750-ml-35%C2%B0.jpg?v=637656818719400000"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Pisco Mistral",
@@ -52,7 +58,8 @@
         "price": 8990,
         "image": "http://www.alambique22.cl/1328-home_default/pisco-mistral-anejando-en-roble-35-1000cc.jpg"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Bacardi Blanco",
@@ -60,7 +67,8 @@
         "price": 8990,
         "image": "https://dondelanegra.cl/wp-content/uploads/2020/09/bacardi_coco.jpg"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Ron Bacardi Añejo",
@@ -68,7 +76,8 @@
         "price": 7190,
         "image": "https://www.elcielo.cl/tienda/748-large_default/ron-barcelo-anejo-1-litro-.jpg"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Soda",
@@ -76,7 +85,8 @@
         "price": 850,
         "image": "https://tofuu.getjusto.com/orioneat-prod/G6hp5mfeYmkxCCXLx-cocacolanrm.jpg"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Cabo Viejo",
@@ -84,7 +94,8 @@
         "price": 2990,
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8eFg5-cCyTblxa4D1DYqQX_Cgm9sdFslH-x7o0DtjB7HVzjX2BKGUR3FGZzrpuh2F_hU&usqp=CAU"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Omo",
@@ -92,7 +103,8 @@
         "price": 2400,
         "image": "https://r.btcdn.co/r/eyJzaG9wX2lkIjo0MDY0LCJnIjoiMTAwMHgifQ/f94f9d776de57d4/667742-7805000313616.jpg"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Fuzol",
@@ -100,7 +112,8 @@
         "price": 1900,
         "image": "https://dojiw2m9tvv09.cloudfront.net/12840/product/M_fuzol-hipo-1lt3636.jpg?51&time=1672709644"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Ariel",
@@ -108,7 +121,8 @@
         "price": 3390,
         "image": "https://7483c243aa9da28f329c-903e05bc00667eb97d832a11f670edad.ssl.cf1.rackcdn.com/20306888_5-axoIWDzT.jpg"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Raid",
@@ -116,7 +130,8 @@
         "price": 2290,
         "image": "https://raidar-uc1.azureedge.net/-/media/Images/Project/RaidSite/Product-Page/large-product-image/7790520991836.jpg"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Lysoform",
@@ -124,7 +139,8 @@
         "price": 1790,
         "image": "https://d1tjllbjmslitt.cloudfront.net/spree/products/57177/large_webp/574933.webp?1641329193"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Jabon Antibacterial",
@@ -132,7 +148,8 @@
         "price": 3450,
         "image": "https://dipromed.cl/d/enfermos-y-adulto-mayor/1793-large_default/jabon-liquido-dichlorexan-clorhexidina-2.jpg"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Pasta",
@@ -140,7 +157,8 @@
         "price": 790,
         "image": "https://eltitempresas.cl/wp-content/uploads/2019/03/pasta-espirales-carozzi-1.jpg"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "kg"
     },
     {
         "id": "Tomato sauce",
@@ -148,7 +166,8 @@
         "price": 1100,
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkm6ef2nvH-y_T0ue7kAnbFKcp8o5oYBUU1nDlGwk024mhj8zYpdrmOrxSe1vTOGFpEl8&usqp=CAU"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Porotos granados",
@@ -156,7 +175,8 @@
         "price": 1250,
         "image": "https://jumbo.vtexassets.com/arquivos/ids/485015/Porotos-Granados-Wasil-380-g.jpg?v=637891751456130000"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "kg"
     },
     {
         "id": "Rice",
@@ -164,7 +184,8 @@
         "price": 700,
         "image": "https://i0.wp.com/www.distribuidorasantiago.cl/wp-content/uploads/2018/05/Tucapel-Arroz.jpg?fit=1200%2C1200&ssl=1"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "kg"
     },
     {
         "id": "Pure instantaneo",
@@ -172,7 +193,8 @@
         "price": 1200,
         "image": "https://bodegadispal.cl/wp-content/uploads/2021/01/pure-papas-250-gr.jpg"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },    
     {
         "id": "Salchichas",
@@ -180,7 +202,8 @@
         "price": 950,
         "image": "https://cugat.cl/wp-content/uploads/2021/04/7801907010306-2.jpg"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Dog Show",
@@ -188,7 +211,8 @@
         "price": 20990,
         "image": "https://sodimac.scene7.com/is/image/SodimacCL/6060943_01?wid=800&hei=800&qlt=70"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Royal Canin",
@@ -196,7 +220,8 @@
         "price": 25490,
         "image": "https://bestforpets.cl/tienda/12700-home_default/maxi-adult.jpg"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Dog Buffet",
@@ -204,7 +229,8 @@
         "price": 15990,
         "image": "https://cugat.cl/wp-content/uploads/2021/04/7804419001152-2.jpg"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Cannes",
@@ -212,7 +238,8 @@
         "price": 29990,
         "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.sernac.cl%2Fportal%2F619%2Fw3-article-58617.html&psig=AOvVaw1CjFs71ZGactM-o5LcTBBZ&ust=1676121580103000&source=images&cd=vfe&ved=2ahUKEwjOi6rMhYv9AhXFBLkGHRLHC2kQjRx6BAgAEAo"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     },
     {
         "id": "Purina One",
@@ -220,6 +247,7 @@
         "price": 18990,
         "image": "https://dojiw2m9tvv09.cloudfront.net/11787/product/alimentosecoparagatopurina-one-adultopolloysalmo-n9602.jpg"
         ,
-        "amount" : 1
+        "amount" : 1,
+        "qty" : "un"
     }
     ]

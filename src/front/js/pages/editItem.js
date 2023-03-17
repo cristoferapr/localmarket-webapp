@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../../styles/itemCard.css";
+import "../../styles/editItem.css";
 import data from "../../../../public/all.json";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -36,10 +36,16 @@ const EditItem = () => {
       setProducts(newProducts);
       setEditing(false);
     };
+
+    function numberWithCommas(x) {
+      var parts = x.toString().split(".");
+      parts[0]=parts[0].replace(/\B(?=(\d{3})+(?!\d))/g,".");
+      return parts.join(",");
+      }
   
     return (
-      <div>
-        <div>
+      <div class="container">
+        <div id="updiv">
           <label htmlFor="id">Ingresa el ID del producto:</label>
           <input
             type="text"
@@ -50,11 +56,11 @@ const EditItem = () => {
         </div>
         {product.name ? (
           <div>
-            <p>Nombre del producto: {product.name}</p>
-            <p>Precio del producto: {product.price}</p>
-            <img src={product.image} alt={product.name} />
+            <p>Nombre del producto:      {product.name}</p>
+            <p>Precio del producto:      {numberWithCommas(product.price)}</p>
+            <img src={product.image} alt={product.name} id="image"/>
             {!editing && (
-              <button type="button" onClick={handleEdit}>
+              <button type="button" id="editbutton" onClick={handleEdit}>
                 Editar
               </button>
             )}
@@ -87,7 +93,7 @@ const EditItem = () => {
                     onChange={e => setNewImage(e.target.value)}
                   />
                 </div>
-                <button type="button" onClick={handleSave} >
+                <button type="button" id="savebutton" onClick={handleSave} >
                   Guardar cambios
                 </button>
               </div>

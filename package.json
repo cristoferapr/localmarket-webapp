@@ -76,11 +76,13 @@
 	"dependencies": {
 		"bootstrap": "^4.6.0",
 		"faker": "^6.6.6",
+		"gapi-script": "^1.2.0",
 		"prop-types": "^15.6.1",
 		"react": "^16.14.0",
 		"react-bootstrap": "^2.7.2",
 		"react-dom": "^16.8.4",
 		"react-fakers": "^1.0.3-rc1",
+		"react-google-login": "^5.2.2",
 		"react-icons": "^4.7.1",
 		"react-polyfills": "0.0.1",
 		"react-router-dom": "^6.3.0",

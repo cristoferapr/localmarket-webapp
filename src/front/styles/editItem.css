@@ -1,0 +1,59 @@
+#updiv {
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+
+#id {
+    margin-left: 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 350px;
+}
+
+#editbutton {
+    margin-left: 20px;
+    border-radius: 5px;
+    width: 100px;
+    border-color: green;
+    background-color: greenyellow;
+}
+
+#image {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+#newName {
+    margin-left: 10px;
+    width: 350px;
+    margin-bottom: 20px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+#newPrice {
+    margin-left: 25px;
+    width: 350px;
+    margin-bottom: 20px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+#newImage {
+    margin-left: 16px;
+    width: 350px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+#savebutton {
+    margin-top: 15px;
+    border-radius: 5px;
+    width: 200px;
+    border-color: green;
+    background-color: greenyellow;
+}

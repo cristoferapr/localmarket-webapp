@@ -23,28 +23,34 @@ const Cart = ({ cart, setCart, handleChange }) => {
     handlePrice();
   });
 
+  function numberWithCommas(x) {
+    var parts = x.toString().split(".");
+    parts[0]=parts[0].replace(/\B(?=(\d{3})+(?!\d))/g,".");
+    return parts.join(",");
+    }
+
   return (
     <><article>
       {cart.map((item) => (
         <div className="cart_box" key={item.id}>
           <div className="cart_img">
             <img src={item.image} alt="" />
-            <p>{item.name}</p>
+            <p>{item.name} ({item.qty})</p>
           </div>
           <div>
-            <button onClick={() => handleChange(item, 1)}>+</button>
-            <button>{item.amount}</button>
-            <button onClick={() => handleChange(item, -1)}>-</button>
+            <button class="stilo" onClick={() => handleChange(item, 1)}>+</button>
+            <button class="stilo">{item.amount}</button>
+            <button class="stilo" onClick={() => handleChange(item, -1)}>-</button>
           </div>
           <div>
-            <span>{item.price}</span>
+            <span>{numberWithCommas(item.price) + " CLP"}</span>
             <button onClick={() => handleRemove(item.id)}>Remove</button>
           </div>
         </div>
       ))}
       <div className="total">
         <span>Total Price of your Cart</span>
-        <span> CLP - {price}</span>
+        <span>{numberWithCommas(price) + " CLP"}</span>
       </div>
     </article>
     <div class="col-md-12 text-center mt-4">

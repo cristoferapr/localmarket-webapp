@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/itemCard.css";
+import "../../styles/addItem.css";
 import data from "../../../../public/data.json";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -26,9 +27,10 @@ const AddItem = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div class="container">
+    <form onSubmit={handleSubmit} id="additem">
       <div>
-        <label htmlForm="name">Nombre del producto:</label>
+        <label htmlForm="name" id="nn">Nombre del producto:</label>
         <input
           type="text"
           id="name"
@@ -38,7 +40,7 @@ const AddItem = () => {
         />
       </div>
       <div>
-        <label htmlForm="price">Precio del producto:</label>
+        <label htmlForm="price" id="pp">Precio del producto:</label>
         <input
           type="number"
           id="price"
@@ -48,7 +50,7 @@ const AddItem = () => {
         />
       </div>
       <div>
-        <label htmlForm="stock">Cantidad de stock:</label>
+        <label htmlForm="stock" id="ss">Cantidad de stock:</label>
         <input
           type="number"
           id="stock"
@@ -58,7 +60,7 @@ const AddItem = () => {
         />
       </div>
       <div>
-        <label htmlForm="image">Link de imagen:</label>
+        <label htmlForm="image" id="im">Link de imagen:</label>
         <input
           type="text"
           id="image"
@@ -67,8 +69,9 @@ const AddItem = () => {
           onChange={handleChange}
         />
       </div>
-      <button type="submit">Enviar</button>
+      <button type="submit" id="sbb">Enviar</button>
     </form>
+    </div>
   );
 }
 export default AddItem;

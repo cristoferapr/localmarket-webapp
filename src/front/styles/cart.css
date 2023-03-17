@@ -75,3 +75,9 @@
     color: green;
     font-weight: bold;
   }
+
+.stilo {
+  color: rgb(122, 122, 122);
+  border-radius: 7px;
+  background-color: rgba(106, 223, 83, 0.603);
+}

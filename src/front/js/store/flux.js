@@ -48,7 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 				}
 				try{
-					const resp = await fetch('https://3001-cristoferap-localmarket-tc6gsl86gmw.ws-us87.gitpod.io/api/token', opts)
+					const resp = await fetch('https://3001-cristoferap-localmarket-91mrf7wq3tj.ws-us90.gitpod.io/api/token', opts)
 					if(resp.status !== 200){
 						alert ("There has been some error");
 						return false;

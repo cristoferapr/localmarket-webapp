@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../../styles/editItem.css";
 import data from "../../../../public/all.json";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { Context } from "../store/appContext";
 
 const EditItem = () => {
-    const [products, setProducts] = useState(data);
+    const { store } = useContext(Context)
+    
     const [id, setId] = useState('');
     const [product, setProduct] = useState({});
     const [editing, setEditing] = useState(false);
@@ -15,9 +17,9 @@ const EditItem = () => {
     const [newImage, setNewImage] = useState('');
   
     useEffect(() => {
-      const foundProduct = products.find(p => p.name === id);
+      const foundProduct = store.products.find(p => p.name === id);
       setProduct(foundProduct || {});
-    }, [id, products]);
+    }, [id, store.products]);
   
     const handleEdit = () => {
       setEditing(true);
@@ -27,7 +29,7 @@ const EditItem = () => {
     };
   
     const handleSave = () => {
-      const newProducts = products.map(p => {
+      const newProducts = store.products.map(p => {
         if (p.name === product.name) {
           return { name: newName, price: newPrice, image: newImage };
         }

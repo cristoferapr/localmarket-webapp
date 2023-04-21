@@ -5,7 +5,8 @@
         "price": 790,
         "image": "https://www.openfotos.com/pictures/potato-3761.med.jpg",
         "amount" : 1,
-        "qty" : "kg"
+        "qty" : "kg",
+        "category" : 1
     },
     {
         "id": "Banana",

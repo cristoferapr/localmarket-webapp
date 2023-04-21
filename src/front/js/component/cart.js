@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/cart.css"
-import { Link } from "react-router-dom";
-import OrderForm from "./order";
+import axios from "axios";
+import OrderForm from "../component/order"
 
 const Cart = ({ cart, setCart, handleChange }) => {
+  const [show, setShow] = useState(true);
   const [price, setPrice] = useState(0);
 
   const handleRemove = (id) => {
@@ -15,7 +16,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
   const handlePrice = () => {
     let ans = 0;
     cart.map((item) => 
-    (ans += item.price * item.amount));
+    (ans += item.price * item.stock));
     setPrice(ans);
   };
 
@@ -29,8 +30,24 @@ const Cart = ({ cart, setCart, handleChange }) => {
     return parts.join(",");
     }
 
+    const enviarCorreo = async (event) => {
+      event.preventDefault();
+
+      try {
+        // Envíe los detalles del carrito de compras a través de una solicitud POST a la ruta Flask
+        await axios.post('https://3001-cristoferap-localmarket-1d8i3g5peuz.ws-us95.gitpod.io/api/sendmail', { cart, price });
+    
+        // Muestre un mensaje al usuario indicando que el correo electrónico se envió correctamente
+        alert('El correo electrónico se envió correctamente');
+      } catch (error) {
+        // Muestre un mensaje al usuario indicando que se produjo un error al enviar el correo electrónico
+        alert('Se produjo un error al enviar el correo electrónico');
+        console.error(error);
+      }
+
+    };
   return (
-    <><article>
+    <>{show ? ( <><article>
       {cart.map((item) => (
         <div className="cart_box" key={item.id}>
           <div className="cart_img">
@@ -39,7 +56,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
           </div>
           <div>
             <button class="stilo" onClick={() => handleChange(item, 1)}>+</button>
-            <button class="stilo">{item.amount}</button>
+            <button class="stilo">{item.stock}</button>
             <button class="stilo" onClick={() => handleChange(item, -1)}>-</button>
           </div>
           <div>
@@ -52,12 +69,12 @@ const Cart = ({ cart, setCart, handleChange }) => {
         <span>Total Price of your Cart</span>
         <span>{numberWithCommas(price) + " CLP"}</span>
       </div>
-    </article>
-    <div class="col-md-12 text-center mt-4">
-      <Link to="/order">
-      <button class="order">Order Now!</button>
-      </Link>
-      </div></>
+    </article><div class="col-md-12 text-center mt-4">
+        {/*<Link to="/order">*/}
+        <button class="order" onClick={() => setShow(false)}>Order Now!</button>
+        {/*</Link>*/}
+      </div></> ): 
+      <OrderForm cart={cart} price={price}/>} </>
   );
 };
 

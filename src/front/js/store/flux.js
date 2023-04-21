@@ -14,7 +14,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			products: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -48,7 +49,34 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 				}
 				try{
-					const resp = await fetch('https://3001-cristoferap-localmarket-91mrf7wq3tj.ws-us90.gitpod.io/api/token', opts)
+					const resp = await fetch('https://3001-cristoferap-localmarket-1d8i3g5peuz.ws-us95.gitpod.io/api/token', opts)
+					if(resp.status !== 200){
+						alert ("There has been some error");
+						return false;
+					} 
+					const data = await resp.json();
+					console.log("this came from the backend", data);
+					sessionStorage.setItem("token", data.access_token);
+					setStore({ token: data.access_token});
+					return true;
+				}
+				catch(error){
+					console.error("There was an error login in!")
+					}
+			},
+
+			gglogin: async (email) => {
+				const opts = {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						email: email,
+					})
+				}
+				try{
+					const resp = await fetch('https://3001-cristoferap-localmarket-1d8i3g5peuz.ws-us95.gitpod.io/api/ggltoken', opts)
 					if(resp.status !== 200){
 						alert ("There has been some error");
 						return false;
@@ -89,6 +117,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			setProducts: (data) => {
+				const store = getStore()
+				fetch("https://3001-cristoferap-localmarket-1d8i3g5peuz.ws-us95.gitpod.io/api/products")
+        			.then(res => res.json())
+        			.then(data => {
+          				setStore( { products : data } );
+        			});
+					console.log(store.products)
 			}
 		}
 	};

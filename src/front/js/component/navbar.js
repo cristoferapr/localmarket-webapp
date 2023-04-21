@@ -59,29 +59,29 @@ export const Navbar = () => {
 	return (
 		<>
       <IconContext.Provider value={{ color: "#fff" }}>
-        <Nav>
-			<div class="container">
-				<Row>
-					<Col>
+        <div className="navbar bg-dark d-flex justify-content-center">
+			<div class="container d-flex justify-content-center">
+				<div className="row">
+					<div className="col">
 						<NavIcon to="#">
          			   <FaIcons.FaBars onClick={showSidebar} />
          				</NavIcon>
-		 		    </Col>
-					<Col xs={6}>
+		 		    </div>
+					<div className="col ps-5 d-flex justify-content-center">
             <Link to="/"> 
-					<h2
+					<div className="h2 d-flex justify-content-center"
             			style={{ textAlign: "center",
 						paddingTop: "2vh",
                     	paddingLeft: "2%",
                     	color: "white" }}
-          				>MinimarketWebApp</h2>
+          				>MinimarketWebApp</div>
               		</Link>
-					</Col>
-					<Col>
+					</div>
+					<div className="col">
           <Dropdown alingRigth style={{paddingTop: "1vh",}}>
     </Dropdown>
-					</Col>
-					<Col>
+					</div>
+					<div className="col">
 					<div  className='nav-container' style={{paddingTop: "1vh", display: "flex", flex_direction: "row"}}>
 					{ !store.token ?
 						<Link to="/login">
@@ -91,12 +91,12 @@ export const Navbar = () => {
             <><button className="btn btn-primary" onClick={routeChange}>Control Panel</button>
             <Link to="/">
             <button onClick={() => actions.logout()} className="btn btn-primary">Log Out</button></Link></>
-}</div></Col>
-				</Row>
+}</div></div>
+				</div>
 
 
 			</div>
-        </Nav>
+        </div>
         <SidebarNav sidebar={sidebar}>
           <SidebarWrap>
             <NavIcon to="#">

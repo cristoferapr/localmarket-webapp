@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Form, FormControl, FormGroup, Col, Button } from 'react-bootstrap';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+export const Signup = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  function handleRegister(event) {
+    event.preventDefault();
     if (!email || !password) {
       setError('Por favor, ingrese un correo electrónico y una contraseña válidos');
       return;
@@ -22,11 +25,21 @@ const Signup = () => {
     }
     // todo implementar validacion y solicitud post
     setError(null);
-  };
+    axios
+      .post("https://3001-cristoferap-localmarket-1d8i3g5peuz.ws-us95.gitpod.io/api/register", { email, password })
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error.response.data);
+      });
+      navigate("/login")
+
+  }
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleRegister}>
         {error && <p style={{ color: 'red' }}>{error}</p>}
         <FormGroup>
           <Col sm={10}>
@@ -58,6 +71,5 @@ const Signup = () => {
       </Form>
     </div>
   );
-};
 
-export default Signup;
+}

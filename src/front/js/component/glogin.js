@@ -1,11 +1,14 @@
 import { GoogleLogin } from 'react-google-login';
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from '../store/appContext';
 
 const clientId= "1069422158574-in2iou05qd9hh8bomhdrev5rdlrip6he.apps.googleusercontent.com";
 
 function GglLogin () {
+    const { actions } = useContext(Context)
+
     const onSuccess = (res) => {
-        console.log("Login success as:", res.profileObj)
+        actions.gglogin(res.profileObj.email);
     }
 
     const onFailure = (res) => {
@@ -21,8 +24,7 @@ function GglLogin () {
             buttonText="Login with Google"
             onSuccess={onSuccess}
             onFailure={onFailure}
-            cookiePolicy={'single_host_origin'}
-            isSignedIn={true}        
+            cookiePolicy={'single_host_origin'}   
         />
     </div>
     )

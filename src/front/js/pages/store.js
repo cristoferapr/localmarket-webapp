@@ -18,9 +18,9 @@ export const Store = () => {
 	const handleChange = (item, d) => {
 	  const ind = cart.indexOf(item);
 	  const arr = cart;
-	  arr[ind].amount += d;
+	  arr[ind].stock += d;
   
-	  if (arr[ind].amount === 0) arr[ind].amount = 1;
+	  if (arr[ind].stock === 0) arr[ind].stock = 1;
 	  setCart([...arr]);
 	};
   

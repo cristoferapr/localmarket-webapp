@@ -19,7 +19,7 @@ import OrderForm from "./component/order";
 import AddItem from "./pages/addItem";
 import EditItem from "./pages/editItem";
 import DeleteItem from "./pages/deleteItem";
-import Signup from "./pages/signup";
+import { Signup } from "./pages/signup";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";

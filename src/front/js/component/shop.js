@@ -1,22 +1,19 @@
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect, useContext } from "react";
 import ItemCard from "./itemCard";
 import data from "../../../../public/all.json";
 import "../../styles/home.css";
+import { Context } from "../store/appContext";
 
 const Shop = ({ handleClick }) => {
-    const [products, setProducts] = useState([]);
+    const { store, actions } = useContext( Context )
     useEffect(() => {
-      fetch("data.json")
-        .then(res => res.json())
-        .then(data => {
-          setProducts(data);
-        });
+      actions.setProducts()
     }, []);
   
       
         return (
           <section>
-            {data.map(product => (
+            {store.products.map(product => (
           <ItemCard key={product.id} item={product} handleClick={handleClick} />
                 ))}
           </section>

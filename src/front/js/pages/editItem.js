@@ -15,6 +15,7 @@ const EditItem = () => {
     const [newName, setNewName] = useState('');
     const [newPrice, setNewPrice] = useState('');
     const [newImage, setNewImage] = useState('');
+    const [newProduct, setNewProduct] = useState({});
   
     useEffect(() => {
       const foundProduct = store.products.find(p => p.name === id);
@@ -35,7 +36,8 @@ const EditItem = () => {
         }
         return p;
       });
-      setProducts(newProducts);
+      setNewProduct(product)
+      console.log(newProduct)
       setEditing(false);
     };
 

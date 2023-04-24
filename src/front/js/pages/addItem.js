@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import "../../styles/itemCard.css";
 import "../../styles/addItem.css";
 import { Context } from "../store/appContext";
+import { useNavigate } from "react-router-dom";
 
 const AddItem = () => {
   const { store } = useContext(Context)
@@ -16,6 +17,8 @@ const AddItem = () => {
     qty: 'un',
     id: id
   });
+
+  const navigate = useNavigate()
 
   const handleChange = event => {
     setProduct({
@@ -40,6 +43,7 @@ const AddItem = () => {
       .catch(err => {
         console.error(err);
       });
+      navigate('/')
   };
 
   return (

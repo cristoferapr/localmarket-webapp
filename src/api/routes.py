@@ -1,6 +1,7 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
+import os
 import requests
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Product
@@ -12,6 +13,8 @@ from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
 
 api = Blueprint('api', __name__)
+api__key =  os.environ.get('API_KEY')
+domain_url = os.environ.get('DOMAIN_URL')
 
 @api.route("/token", methods=["POST"])
 def create_token():
@@ -65,10 +68,10 @@ def enviar_correo():
         mensaje += '- {} ({}): {}\n'.format(item['name'], item['stock'], item['price'])
     mensaje += f"\nPrecio total: {price}"
     # Configure los parámetros necesarios para enviar el correo electrónico utilizando la API de Mailgun
-    url = "https://api.mailgun.net/v3/sandboxb6e083ebbd2b4b818524ef72c209818b.mailgun.org/messages"
-    api_key = "3bb34c4af3fee482dd1b3f0431960a76-181449aa-efe04e46"
-    from_email = "localmarket.webapp.mail@gmail.com"
-    to_email = "localmarket.webapp.mail@gmail.com"
+    url = domain_url
+    api_key = api__key
+    from_email = "sreyes.local139@gmail.com"
+    to_email = "sreyes.local139@gmail.com"
     subject = "Detalles del carrito de compras"
     data = {
         "from": from_email,
@@ -117,3 +120,20 @@ def delete_product(product_id):
     db.session.delete(product)
     db.session.commit()
     return jsonify(message=f"Product with id {product_id} deleted successfully")
+
+@api.route('/products/<string:name>', methods=['PUT'])
+def update_product(name):
+    product = Product.query.filter_by(name=name).first()
+    if product is None:
+        return jsonify({'error': 'Producto no encontrado'}), 404
+
+    data = request.get_json()
+    if 'name' in data:
+        product.name = data['name']
+    if 'price' in data:
+        product.price = data['price']
+    if 'image' in data:
+        product.image = data['image']
+
+    db.session.commit()
+    return jsonify(product.serialize())

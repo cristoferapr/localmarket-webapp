@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import validator from 'validator';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const OrderForm = ({ cart,price }) => {
   const [email, setEmail] = useState('');
@@ -9,6 +10,7 @@ const OrderForm = ({ cart,price }) => {
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
   const [comment, setComment] = useState('');
+  const navigate = useNavigate()
 
   const enviarCorreo = async (event) => {
     event.preventDefault();
@@ -41,6 +43,7 @@ const OrderForm = ({ cart,price }) => {
   
       // Muestre un mensaje al usuario indicando que el correo electrónico se envió correctamente
       alert('El correo electrónico se envió correctamente');
+      navigate('/')
     } catch (error) {
       // Muestre un mensaje al usuario indicando que se produjo un error al enviar el correo electrónico
       alert('Se produjo un error al enviar el correo electrónico');

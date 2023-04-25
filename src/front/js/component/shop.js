@@ -1,6 +1,5 @@
-import React, { useState,useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import ItemCard from "./itemCard";
-import data from "../../../../public/all.json";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
 

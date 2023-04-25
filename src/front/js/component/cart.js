@@ -1,21 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../../styles/cart.css"
 import axios from "axios";
 import OrderForm from "../component/order"
+import { Context } from "../store/appContext";
 
-const Cart = ({ cart, setCart, handleChange }) => {
+const Cart = ({ handleChange }) => {
   const [show, setShow] = useState(true);
   const [price, setPrice] = useState(0);
+  const { store, actions } = useContext(Context)
 
-  const handleRemove = (id) => {
-    const arr = cart.filter((item) => item.id !== id);
-    setCart(arr);
+  const handleRemove = (item) => {
+    {/*const arr = cart.filter((item) => item.id !== id);
+  setCart(arr);*/}
+    actions.deleteFromCart(item)
     handlePrice();
   };
 
   const handlePrice = () => {
     let ans = 0;
-    cart.map((item) => 
+    store.cart.map((item) => 
     (ans += item.price * item.stock));
     setPrice(ans);
   };
@@ -48,7 +51,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
     };
   return (
     <>{show ? ( <><article>
-      {cart.map((item) => (
+      {store.cart.map((item) => (
         <div className="cart_box" key={item.id}>
           <div className="cart_img">
             <img src={item.image} alt="" />
@@ -61,7 +64,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
           </div>
           <div>
             <span>{numberWithCommas(item.price) + " CLP"}</span>
-            <button onClick={() => handleRemove(item.id)}>Remove</button>
+            <button onClick={() => handleRemove(item)}>Remove</button>
           </div>
         </div>
       ))}

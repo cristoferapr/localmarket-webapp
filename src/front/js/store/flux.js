@@ -15,7 +15,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
-			products: []
+			products: [],
+			cart:[],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -126,6 +127,18 @@ const getState = ({ getStore, getActions, setStore }) => {
           				setStore( { products : data } );
         			});
 					console.log(store.products)
+			},
+			setCart: (data) =>{
+				const store = getStore()
+				setStore ( { cart : [...store.cart, data ] } )
+			},
+			setAllCart: (data) =>{
+				const store = getStore()
+				setStore ( { cart : data })
+			},
+			deleteFromCart: (data) =>{
+				const store = getStore();
+				setStore ( { cart : store.cart.filter(product => product.name !== data.name) } )
 			}
 		}
 	};

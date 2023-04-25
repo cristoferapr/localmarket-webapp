@@ -2,17 +2,10 @@ import React from "react";
 import { createContext, useContext, useReducer, useEffect, useState } from "react";
 import { cartReducer, productReducer } from "./Reducers";
 
-const Cart = createContext();
+const aCart = createContext();
 
-const Context = ({ children }) => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    fetch("../../../../public/all.json")
-      .then(res => res.json())
-      .then(data => {
-        setProducts(data);
-      });
-  }, []);
+const Functions = ({ children }) => {;
+  const [ store, actions ] = useContext(Context)
 
   const [state, dispatch] = useReducer(cartReducer, {
     products: products,
@@ -39,4 +32,4 @@ export const CartState = () => {
   return useContext(Cart);
 };
 
-export default Context;
+export default Functions;

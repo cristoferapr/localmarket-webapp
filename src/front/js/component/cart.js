@@ -4,7 +4,7 @@ import axios from "axios";
 import OrderForm from "../component/order"
 import { Context } from "../store/appContext";
 
-const Cart = ({ handleChange }) => {
+const Cart = () => {
   const [show, setShow] = useState(true);
   const [price, setPrice] = useState(0);
   const { store, actions } = useContext(Context)
@@ -15,6 +15,19 @@ const Cart = ({ handleChange }) => {
     actions.deleteFromCart(item)
     handlePrice();
   };
+
+  const handleChange = (item, d) => {
+		const ind = store.cart.indexOf(item);
+		const arr = store.cart;
+		arr[ind].stock += d;
+		actions.setAllCart(arr)
+
+	  
+	  return
+  	  {/*
+	  if (arr[ind].stock === 0) arr[ind].stock = 1;
+	actions.setCart([arr]); */}
+	};
 
   const handlePrice = () => {
     let ans = 0;
@@ -33,22 +46,6 @@ const Cart = ({ handleChange }) => {
     return parts.join(",");
     }
 
-    const enviarCorreo = async (event) => {
-      event.preventDefault();
-
-      try {
-        // Envíe los detalles del carrito de compras a través de una solicitud POST a la ruta Flask
-        await axios.post('https://3001-cristoferap-localmarket-1d8i3g5peuz.ws-us95.gitpod.io/api/sendmail', { cart, price });
-    
-        // Muestre un mensaje al usuario indicando que el correo electrónico se envió correctamente
-        alert('El correo electrónico se envió correctamente');
-      } catch (error) {
-        // Muestre un mensaje al usuario indicando que se produjo un error al enviar el correo electrónico
-        alert('Se produjo un error al enviar el correo electrónico');
-        console.error(error);
-      }
-
-    };
   return (
     <>{show ? ( <><article>
       {store.cart.map((item) => (
@@ -77,7 +74,7 @@ const Cart = ({ handleChange }) => {
         <button class="order" onClick={() => setShow(false)}>Order Now!</button>
         {/*</Link>*/}
       </div></> ): 
-      <OrderForm cart={cart} price={price}/>} </>
+      <OrderForm cart={store.cart} price={price}/>} </>
   );
 };
 

@@ -1,5 +1,5 @@
 import "../../styles/home.css";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import "../../styles/itemCard.css";
 import Shopbar from "../component/shopbar";
 import Cart from "../component/cart";
@@ -45,7 +45,7 @@ export const Store = () => {
 		{show ? (
 		  <Shop handleClick={handleClick} />
 		) : (
-		  <Cart cart={store.cart} setCart={store.setCart} handleChange={handleChange} />
+		  <Cart />
 		)}
 	  </React.Fragment>
 	);

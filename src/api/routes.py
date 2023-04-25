@@ -128,12 +128,12 @@ def update_product(name):
         return jsonify({'error': 'Producto no encontrado'}), 404
 
     data = request.get_json()
-    if 'name' in data:
-        product.name = data['name']
-    if 'price' in data:
-        product.price = data['price']
-    if 'image' in data:
-        product.image = data['image']
+    if 'newName' in data:
+        product.name = data['newName']
+    if 'newPrice' in data:
+        product.price = data['newPrice']
+    if 'newImage' in data:
+        product.image = data['newImage']
 
     db.session.commit()
     return jsonify(product.serialize())

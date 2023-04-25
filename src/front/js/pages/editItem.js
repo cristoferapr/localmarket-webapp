@@ -1,13 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import "../../styles/editItem.css";
-import data from "../../../../public/all.json";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import { Context } from "../store/appContext";
 
 const EditItem = () => {
-    const { store } = useContext(Context)
+    const { store, actions } = useContext(Context)
     
     const [id, setId] = useState('');
     const [product, setProduct] = useState({});
@@ -15,12 +11,15 @@ const EditItem = () => {
     const [newName, setNewName] = useState('');
     const [newPrice, setNewPrice] = useState('');
     const [newImage, setNewImage] = useState('');
-    const [newProduct, setNewProduct] = useState({});
-  
+    const [reload, setReload] = useState(false)
     useEffect(() => {
       const foundProduct = store.products.find(p => p.name === id);
       setProduct(foundProduct || {});
     }, [id, store.products]);
+
+    useEffect(() => {
+      
+    }, [reload]);
   
     const handleEdit = () => {
       setEditing(true);
@@ -29,16 +28,26 @@ const EditItem = () => {
       setNewImage(product.image);
     };
   
-    const handleSave = () => {
-      const newProducts = store.products.map(p => {
-        if (p.name === product.name) {
-          return { name: newName, price: newPrice, image: newImage };
-        }
-        return p;
+    const handleSave = event => {
+      event.preventDefault();
+      console.log()
+      const formData = { newName, newPrice, newImage };
+    fetch(`https://3001-cristoferap-localmarket-1d8i3g5peuz.ws-us95.gitpod.io/api/products/${product.name}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        actions.setProducts()
+        setEditing(false);
+      })
+      .catch(err => {
+        console.error(err);
       });
-      setNewProduct(product)
-      console.log(newProduct)
-      setEditing(false);
     };
 
     function numberWithCommas(x) {
@@ -76,7 +85,7 @@ const EditItem = () => {
                     type="text"
                     id="newName"
                     value={newName}
-                    onChange={e => setNewName(e.target.value)}
+                    onChange={(e) => setNewName(e.target.value)}
                   />
                 </div>
                 <div>
@@ -85,7 +94,7 @@ const EditItem = () => {
                     type="text"
                     id="newPrice"
                     value={newPrice}
-                    onChange={e => setNewPrice(e.target.value)}
+                    onChange={(e) => setNewPrice(e.target.value)}
                   />
                 </div>
                 <div>
@@ -94,7 +103,7 @@ const EditItem = () => {
                     type="text"
                     id="newImage"
                     value={newImage}
-                    onChange={e => setNewImage(e.target.value)}
+                    onChange={(e) => setNewImage(e.target.value)}
                   />
                 </div>
                 <button type="button" id="savebutton" onClick={handleSave} >

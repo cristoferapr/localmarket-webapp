@@ -119,7 +119,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//reset the global store
 				setStore({ demo: demo });
 			},
-			setProducts: (data) => {
+			setProducts: () => {
 				const store = getStore()
 				fetch("https://3001-cristoferap-localmarket-1d8i3g5peuz.ws-us95.gitpod.io/api/products")
         			.then(res => res.json())

@@ -24,6 +24,7 @@ import { Signup } from "./pages/signup";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import Cart from "./component/cart";
+import { PrivateRoutes } from "./component/PrivateRoutes";
 
  
 //create your first component
@@ -49,10 +50,12 @@ const Layout = () => {
                         <Route element={<DrinksStore />} path="/drinkStore" />
                         <Route element={<CleaningStore />} path="/cleaningStore" />
                         <Route element={<PetStore />} path="/petStore" />
-                        <Route element={<ControlPanel />} path="/controlPanel" />
-                        <Route exact path="/addItem" element={<AddItem />} />
-                        <Route exact path="/editItem" element={<EditItem />} />
-                        <Route exact path="/DeleteItem" element={<DeleteItem />} />
+                        <Route element={<PrivateRoutes />}>
+                            <Route element={<ControlPanel />} path="/controlPanel" exact/>
+                            <Route exact path="/addItem" element={<AddItem />} />
+                            <Route exact path="/editItem" element={<EditItem />} />
+                            <Route exact path="/DeleteItem" element={<DeleteItem />} />
+                        </Route>
                         <Route exact path="/order" element={<OrderForm />} />
                         <Route element={<Signup />} path="/signup" />
                         <Route element={<Cart />} path="/cart" />

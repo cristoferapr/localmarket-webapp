@@ -1,42 +1,48 @@
-import React, { useState, useEffect } from "react";
-import "../../styles/itemCard.css";
-import data from "../../../../public/data.json";
+import React, { useEffect, useContext, useState } from "react";
 import ItemCard from "../component/itemCard";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import "../../styles/home.css";
+import { Context } from "../store/appContext";
+import Shopbar from "../component/shopbar";
+import Cart from "../component/cart";
 
 const VegetablesStore = () => {
-  const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
-  const [total, setTotal] = useState(0);
+    const { store, actions } = useContext( Context )
+    const [show, setShow] = useState(true);
 
-  const handleClick = (item) => {
-	  if (cart.indexOf(item) !== -1) return;
-	  setCart([...cart, item]);
-	  console.log(cart);
-	};
-
-  useEffect(() => {
-    fetch("data.json")
-      .then(res => res.json())
-      .then(data => {
-        setProducts(data);
-      });
-  }, []);
-
-  return (
-    <div className="item-container">
-          <section>
-            {data.map(product => (
+    const handleClick = (item) => {
+      if (store.cart.indexOf(item) !== -1) return;
+      if (store.cart.some(p => p.name === item.name)){
+        return
+      }else{
+      console.log(store.cart.indexOf(item))
+      {/*setCart([...cart, item]);*/}
+      actions.setCart(item)
+      console.log(store.cart);
+      }
+    };
+    
+    const handleChange = (item, d) => {
+      const ind = store.cart.indexOf(item);
+      const arr = store.cart;
+      arr[ind].stock += d;
+      actions.setAllCart(arr)
+    }
+    const filteredProducts = store.products.filter(product => product.category === 1);
+  
+    return (
+      <React.Fragment>
+      <Shopbar setShow={setShow} size={store.cart.length} />
+      {show ? (
+        <section>
+        {filteredProducts.map(product => (
           <ItemCard key={product.id} item={product} handleClick={handleClick} />
-                ))}
-          </section>
-      
-        
-    </div>
-
-  );
-}
+        ))}
+      </section>
+      ) : (
+        <Cart />
+      )}
+      </React.Fragment>
+    );
+ };
 
 export default VegetablesStore;

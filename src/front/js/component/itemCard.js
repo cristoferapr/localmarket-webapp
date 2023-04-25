@@ -9,6 +9,8 @@ const ItemCard = ({ item, handleClick }) => {
       return parts.join(",");
       }
     return (
+      <div className='row'>
+        <div className='col-4'>
         <div className="cards">
           <div className="image_box">
             <img src={image} alt={name} />
@@ -19,6 +21,8 @@ const ItemCard = ({ item, handleClick }) => {
             <button onClick={() => handleClick(item)}>Add to Cart</button>
           </div>
         </div>
+        </div>
+      </div>
       );
     };
 

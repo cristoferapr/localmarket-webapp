@@ -1,6 +1,6 @@
 # Minimarket WebApp
 
-![Icono del minimercado](https://www.flaticon.es/icono-gratis/mercado_862819?term=mercado&page=1&position=1&origin=search&related_id=862819)
+<img src="https://www.flaticon.es/icono-gratis/mercado_862819?term=mercado&page=1&position=1&origin=search&related_id=862819" alt="Icono del minimercado">
 
 Esta aplicación web de Minimarket está en desarrollo y permite administrar productos, generar órdenes de compra y enviar correos utilizando MailGun API. El sistema de login de usuarios está desarrollado con Python Flask OAuth 2.0, mientras que el front-end está construido con React. El back-end se basa en Python y Flask, y la base de datos se gestiona mediante SQLAlchemy.
 

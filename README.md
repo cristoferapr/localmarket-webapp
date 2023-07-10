@@ -1,6 +1,6 @@
 # Minimarket WebApp
 
-![Icono del minimercado](link_del_icono_del_minimercado)
+![Icono del minimercado](https://www.flaticon.es/icono-gratis/mercado_862819?term=mercado&page=1&position=1&origin=search&related_id=862819)
 
 Esta aplicación web de Minimarket está en desarrollo y permite administrar productos, generar órdenes de compra y enviar correos utilizando MailGun API. El sistema de login de usuarios está desarrollado con Python Flask OAuth 2.0, mientras que el front-end está construido con React. El back-end se basa en Python y Flask, y la base de datos se gestiona mediante SQLAlchemy.
 
@@ -31,10 +31,10 @@ Para configurar el inicio de sesión con Google, sigue estos pasos:
 Sigue estos pasos para instalar y ejecutar la aplicación:
 
 1. Clona este repositorio: `git clone https://github.com/tu_usuario/tu_repositorio.git`
-2. Instala las dependencias del front-end: `cd front-end && npm install`
-3. Instala las dependencias del back-end: `cd back-end && pip install -r requirements.txt`
-4. Inicia el servidor back-end: `python app.py`
-5. Inicia el servidor front-end: `cd front-end && npm start`
+2. Instala las dependencias del back-end: `pipenv install`
+3. Instala las dependencias del front-end: `npm install`
+4. Inicia el servidor back-end: `pipenv run start`
+5. Inicia el servidor front-end: `npm run start`
 
 ## Contribución
 

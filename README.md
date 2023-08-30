@@ -40,6 +40,6 @@ Si deseas contribuir a este proyecto, siéntete libre de abrir una nueva solicit
 
 ## Contacto
 
-Si tienes alguna pregunta o consulta sobre este proyecto, puedes contactarme por correo electrónico a example@example.com.
+Si tienes alguna pregunta o consulta sobre este proyecto, puedes contactarme por correo electrónico a cristoferpizarro.r@gmail.com.
 
 Espero que esto te sea útil. Si tienes alguna otra pregunta, ¡no dudes en preguntar!
